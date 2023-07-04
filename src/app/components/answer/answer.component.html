@@ -1,0 +1,43 @@
+<div
+  class="card text-center"
+  fxLayout="row wrap"
+  style="margin-left: 2px; height: 150px; margin-bottom: 20px;"
+  [ngClass]="{
+    answer: true,
+    'correct-answer': isCorrectAnswerProps,
+    'wrong-answer': isWrongAnswerProps,
+    'disabled-answer': isDisabledAnswerProps
+  }"
+>
+  <div
+    fxFlex="30%"
+    fxFlex.lt-md="100"
+    class="card-body"
+    style="
+      font-size: xx-large;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+    "
+    [ngClass]="{
+      'answer-sidediv': true,
+      'correct-answer-sidediv': isCorrectAnswerProps,
+      'wrong-answer-sidediv': isWrongAnswerProps
+    }"
+  >
+    {{ letterMapping[indexProps] }}
+  </div>
+  <div
+    fxFlex="70%"
+    fxFlex.lt-md="100"
+    class="card-body"
+    style="
+      font-size: x-large;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+    "
+  >
+    {{ answerTextProps }}
+  </div>
+</div>

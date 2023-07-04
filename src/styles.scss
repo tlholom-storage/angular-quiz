@@ -1,0 +1,65 @@
+@use "@angular/material" as mat;
+@import "./assets/themes/ng-quiz.theme.scss";
+
+@include mat.all-component-themes($ng-quiz-theme);
+@include mat.core();
+
+.hidden {
+  visibility: hidden;
+}
+
+mat-spinner {
+  position: fixed !important;
+  margin-top: -50px;
+  margin-left: -50px;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+}
+
+.scrollbar-thin {
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: gray;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.score {
+  background: #fff;
+  color: 000;
+  font-size: 18px;
+  width: 200px;
+  margin: 0 auto;
+  font-weight: 600;
+  height: 40px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.next-button
+{
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

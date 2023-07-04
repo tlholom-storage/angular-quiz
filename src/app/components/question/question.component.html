@@ -1,0 +1,34 @@
+<div>
+  <div class="main-container">
+    <div class="card-container">
+      <mat-card class="card">
+        <div class="question">
+          <h2>{{ (question$ | async)?.question }}</h2>
+        </div>
+        <br />
+
+        <div
+          class="answer"
+          fxLayout="row wrap"
+          fxLayoutGap="32px"
+          fxLayoutAlign="flex-start"
+        >
+          <ng-container
+            *ngFor="let answerItem of answers$ | async; let i = index"
+          >
+            <app-quiz-answer
+              fxFlex="0 1 calc(50% - 32px)"
+              [index]="i"
+              [answerText]="answerItem"
+              (selectAnswer)="onSelectAnswer($event)"
+              [isCorrectAnswer]="isCorrectAnswer(answerItem)"
+              [isWrongAnswer]="isWrongAnswer(answerItem)"
+              [isDisabledAnswer]="isDisabledAnswer(answerItem)"
+            >
+            </app-quiz-answer>
+          </ng-container>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

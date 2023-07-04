@@ -1,0 +1,31 @@
+<div class="quiz container">
+  <div *ngIf="showResult$ | async">
+    <div class="results hero-banner">
+      <div class="card text-center">
+        <div class="card-header bg-accent">Well Done</div>
+        <div class="card-body">
+          <h5 class="card-title">Congratulations</h5>
+          <div class="result-info">
+            <div>You have completed the quiz</div>
+            <div>You've got {{ countAnswerCount$ | async }} of {{ questionsLength$ | async }} right.</div>
+            <button mat-raised-button (click)="restart()" color="primary">
+              Restart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!(showResult$ | async) && (questionsLength$ | async)">
+    <div class="score">
+      Question {{ currentQuestionIndex$ | async }} /
+      {{ questionsLength$ | async }}
+    </div>
+    <app-quiz-question></app-quiz-question>
+    <div class="next-button" >
+      <button mat-raised-button (click)="nextQuestion()" color="primary">
+        Next Button
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+.answer
+{
+  border: 2px solid #9e9e9e;
+}
+.answer-sidediv
+{
+  background-color: #9e9e9e;
+}
+
+.correct-answer
+{
+  border: 2px solid green;
+}
+.correct-answer-sidediv{
+  background-color: green;
+}
+
+.disabled-answer {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.wrong-answer
+{
+  border: 2px solid red;
+}
+.wrong-answer-sidediv{
+  background-color: red;
+}
+
+
